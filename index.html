@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Vakinha.com.br | Vakinha online</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+						<body>
+						<div ontouchstart="touchStart(event)"
+						ontouchmove="touchMove(event)"
+						ontouchend="touchEnd()" style="overflow: hidden;">
+						<div style="display: flex;" class="div">
+							<img src="images/f1.jpg" style="width: 100vw;">
+							<img src="images/f3.jpg" style="width: 100vw;">
+							<img src="images/f5.jpg" style="width: 100vw;">
+						</div>
+
+					</div>
+						<script>
+							function goNext(){
+								document.querySelector('.div').style.marginLeft = '-100vw';
+							}
+							function goPrev(){
+								document.querySelector('.div').style.marginLeft = '-200vw';
+							}
+						var startingX , startingY , movingX , movingY ;
+						function touchStart(evt){
+						startingX = evt.touches[0].clientX ;
+						startingY = evt.touches[0].clientY ;
+						}
+						function touchMove(evt){
+						movingX = evt.touches[0].clientX ;
+						movingY = evt.touches[0].clientY ;
+						}
+						function touchEnd(){
+						if(startingX+100 < movingX){
+												goNext();//right
+						} else if(startingX-100 > movingX){
+												goPrev();//left
+												}
+					 
+					 
+						}
+
+						</script>
+						</body>
+</html>
